@@ -1,0 +1,103 @@
+{
+  "extends" : "thirdParty.api",
+  "abstract" : false,
+  "root" : "https://genial-theory-88407.appspot.com/_ah/api",
+  "name" : "deviceEndpoint",
+  "version" : "v1",
+  "defaultVersion" : false,
+  "adapter" : {
+    "bns" : "https://genial-theory-88407.appspot.com/_ah/spi",
+    "deadline" : 65.0,
+    "type" : "lily"
+  },
+  "auth" : {
+    "allowCookieAuth" : false
+  },
+  "frontendLimits" : {
+    "unregisteredUserQps" : -1,
+    "unregisteredQps" : -1,
+    "unregisteredDaily" : -1,
+    "rules" : [ ]
+  },
+  "cacheControl" : {
+    "type" : "no-cache",
+    "maxAge" : 0
+  },
+  "ownerDomain" : "mashupmaestros",
+  "ownerName" : "mashupmaestros",
+  "methods" : {
+    "deviceEndpoint.getDevice" : {
+      "path" : "device/{id}",
+      "httpMethod" : "GET",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.codesandgears.enterkonnect.endpoints.DeviceEndpoint.getDevice",
+      "request" : {
+        "parameters" : {
+          "id" : {
+            "type" : "int64",
+            "required" : true
+          }
+        },
+        "body" : "empty"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    },
+    "deviceEndpoint.saveDevice" : {
+      "path" : "saveDevice",
+      "httpMethod" : "POST",
+      "authLevel" : "NONE",
+      "scopes" : [ "https://www.googleapis.com/auth/userinfo.email" ],
+      "audiences" : [ ],
+      "clientIds" : [ "292824132082.apps.googleusercontent.com" ],
+      "rosyMethod" : "com.codesandgears.enterkonnect.endpoints.DeviceEndpoint.saveDevice",
+      "request" : {
+        "body" : "autoTemplate(backendRequest)",
+        "bodyName" : "resource"
+      },
+      "response" : {
+        "body" : "autoTemplate(backendResponse)"
+      }
+    }
+  },
+  "descriptor" : {
+    "schemas" : {
+      "Device" : {
+        "id" : "Device",
+        "type" : "object",
+        "properties" : {
+          "id" : {
+            "type" : "string",
+            "format" : "int64"
+          },
+          "macid" : {
+            "type" : "string"
+          },
+          "position" : {
+            "type" : "number",
+            "format" : "float"
+          }
+        }
+      }
+    },
+    "methods" : {
+      "com.codesandgears.enterkonnect.endpoints.DeviceEndpoint.getDevice" : {
+        "response" : {
+          "$ref" : "Device"
+        }
+      },
+      "com.codesandgears.enterkonnect.endpoints.DeviceEndpoint.saveDevice" : {
+        "request" : {
+          "$ref" : "Device"
+        },
+        "response" : {
+          "$ref" : "Device"
+        }
+      }
+    }
+  }
+}
