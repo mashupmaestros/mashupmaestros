@@ -1,0 +1,67 @@
+{
+    "prepare_queue": {
+        "installed": [],
+        "uninstalled": []
+    },
+    "config_munge": {
+        "files": {
+            "res/xml/config.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<feature name=\"Device\"><param name=\"android-package\" value=\"org.apache.cordova.device.Device\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WifiWizard\"><param name=\"android-package\" value=\"com.pylonproducts.wifiwizard.WifiWizard\" /><param name=\"onload\" value=\"true\" /></feature>",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<feature name=\"WifiScanner\"><param name=\"android-package\" value=\"nl.nielsad.cordova.wifiscanner.WifiListener\" /></feature>",
+                            "count": 1
+                        }
+                    ]
+                }
+            },
+            "AndroidManifest.xml": {
+                "parents": {
+                    "/*": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        }
+                    ],
+                    "/manifest": [
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.ACCESS_WIFI_STATE\" />",
+                            "count": 1
+                        },
+                        {
+                            "xml": "<uses-permission android:name=\"android.permission.CHANGE_WIFI_STATE\" />",
+                            "count": 1
+                        }
+                    ]
+                }
+            }
+        }
+    },
+    "installed_plugins": {
+        "org.apache.cordova.device": {
+            "PACKAGE_NAME": "com.avnet.personfinder"
+        },
+        "org.apache.cordova.console": {
+            "PACKAGE_NAME": "com.avnet.personfinder"
+        },
+        "com.pylonproducts.wifiwizard": {
+            "PACKAGE_NAME": "com.avnet.personfinder"
+        },
+        "nl.nielsad.cordova.wifiscanner": {
+            "PACKAGE_NAME": "com.avnet.personfinder"
+        }
+    },
+    "dependent_plugins": {}
+}
