@@ -10,4 +10,4 @@ function init(){
 function doSomethingAfterLoading(){
 	
 	console.log("doSomethingAfterLoadin called");
-}
+} 
