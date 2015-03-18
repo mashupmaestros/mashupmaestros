@@ -39,7 +39,7 @@ public class FeedEndpoint {
         }
     }
 
-
+ 
         @ApiMethod(name = "getFeed")
         public  Feed getFeed(@Named("id") Long id) {
 

@@ -15,7 +15,7 @@ public class OfyService {
 	        ObjectifyService.register(Feed.class);
 	        
 	    }
-
+ 
 	    public static Objectify ofy() {
 	        return ObjectifyService.ofy();
 	    }

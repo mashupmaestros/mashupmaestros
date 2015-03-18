@@ -9,7 +9,7 @@ public class Feed {
 	
 	@Id
     Long id;
-
+ 
     private String feedContent;
     private String feedOwner;
     private String feedDomain;

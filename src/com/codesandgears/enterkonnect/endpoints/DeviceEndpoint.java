@@ -21,7 +21,7 @@ public class DeviceEndpoint {
     
     @ApiMethod(name = "saveDevice")
     public Device saveDevice(Device device) {
-
+ 
            log.entering(DeviceEndpoint.class.getName(),"saveDevice",device);
            log.info(DeviceEndpoint.class.getName()+"saveDevice"+device.toString());
         try {
