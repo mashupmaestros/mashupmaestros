@@ -16,15 +16,14 @@ public class AccessPoints {
 	
 	private FieldOfInteraction properties;
 	
-	private Properties accessPointsConfig;
-	
+		
 	final private String XCOORD = "XCOORD";
 	final private String YCOORD = "YCOORD";
 	final private String FIELD_STRENGTH_DEGRADATION = "FIELD_STRENGTH_DEGRADATION"; 
 	
+	
 	public AccessPoints(String uniqueID){
 		this.uniqueID = uniqueID;
-		accessPointsConfig = AccessPointConfigLoader.getConfigLoaderInstance().getAccessPointProperty();
 		loadAccessPointProperties();
 		getDisposition();
 	}
@@ -33,7 +32,7 @@ public class AccessPoints {
 		// Used to load the Access Point properties like location, strength degradation etc.
 		
 		// Get Fixed values and Update them here
-		properties = new FieldOfInteraction();
+		properties = new FieldOfInteraction(AccessPointConfigLoader.getConfigLoaderInstance().getConfiguration(XCOORD),AccessPointConfigLoader.getConfigLoaderInstance().getConfiguration(YCOORD),AccessPointConfigLoader.getConfigLoaderInstance().getConfiguration(FIELD_STRENGTH_DEGRADATION));
 		
 	}
 
