@@ -1,5 +1,6 @@
 package com.codesandgears.enterkonnect.service;
 import com.codesandgears.enterkonnect.beans.Device;
+import com.codesandgears.enterkonnect.beans.Feed;
 import com.codesandgears.enterkonnect.beans.Person;
 import com.googlecode.objectify.Objectify;
 import com.googlecode.objectify.ObjectifyFactory;
@@ -11,6 +12,7 @@ public class OfyService {
 	       
 	        ObjectifyService.register(Device.class);
 	        ObjectifyService.register(Person.class);
+	        ObjectifyService.register(Feed.class);
 	        
 	    }
 
