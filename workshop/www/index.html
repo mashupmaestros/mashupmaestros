@@ -58,10 +58,10 @@
 			</ul>
 			<h3>News Feeds</h3>
 			<ul>
-				<li><a href="#newsFeedpage_Cocktail"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Cocktail Feeds</a></li>
-				<li><a href="#newsFeedpage_Commerce"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Commerce</a></li>
-				<li><a href="#newsFeedpage_Mobile"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Mobile</a></li>
-				<li><a href="#newsFeedpage_Portal"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Portal</a></li>
+				<li><a href="#newsFeedpage_Generic" onclick="getFeeds('Generic')"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Cocktail Feeds</a></li>
+				<li><a href="#newsFeedpage_Commerce" onclick="getFeeds('Commerce')"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Commerce</a></li>
+				<li><a href="#newsFeedpage_Mobile" onclick="getFeeds('Mobile')"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Mobile</a></li>
+				<li><a href="#newsFeedpage_Portal" onclick="getFeeds('Portal')"><img src="img/JQuery-Mobile-Slide-Menu/smico5.png">Portal</a></li>
 				
 			</ul>
 		</div>
@@ -108,7 +108,7 @@
 
 	</div>
 	
-	<div data-role="page" id="newsFeedpage_Cocktail" data-theme="a">
+	<div data-role="page" id="newsFeedpage_Generic" data-theme="a">
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-update-page-padding="false">
 			<a href="#" data-slidemenu="#slidemenu" data-slideopen="false" data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a>
@@ -116,7 +116,12 @@
 		</div>
 
 		<div data-role="content">
-			Cocktail Feeds
+				<div id="GenericFeedContent">
+				</div>
+				<div id="genericFeedEntry">
+					<input type="text" maxlength="120" id="GenericFeedEntryBox" placeholder="scribble it in...">
+					<input type="button" id="GenericFeedEntryButton" value="Enter" onclick="submitFeed('Generic');">
+				</div>
 		</div>
 
 	</div>
@@ -124,11 +129,17 @@
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-update-page-padding="false">
 			<a href="#" data-slidemenu="#slidemenu" data-slideopen="false" data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a>
-			<h1>Enter Konnect</h1>
+			<h1>Commerce Feeds</h1>
+			
 		</div>
 
 		<div data-role="content">
-			Commerce Feeds
+				<div id="CommerceFeedContent">
+				</div>
+				<div id="commerceFeedEntry">
+					<input type="text" maxlength="120" id="CommerceFeedEntryBox" placeholder="scribble it in...">
+					<input type="button" id="CommerceFeedEntryButton" value="Enter" onclick="submitFeed('Commerce');">
+				</div>
 		</div>
 
 	</div>
@@ -136,11 +147,16 @@
 
 		<div data-role="header" data-position="fixed" data-tap-toggle="false" data-update-page-padding="false">
 			<a href="#" data-slidemenu="#slidemenu" data-slideopen="false" data-icon="smico" data-corners="false" data-iconpos="notext">Menu</a>
-			<h1>Person Finder</h1>
+			<h1>Mobile Feeds</h1>
 		</div>
 
 		<div data-role="content">
-			Mobile Feeds
+				<div id="MobileFeedContent">
+				</div>
+				<div id="mobileFeedEntry">
+					<input type="text" maxlength="120" id="MobileFeedEntryBox" placeholder="scribble it in...">
+					<input type="button" id="MobileFeedEntryButton" value="Enter" onclick="submitFeed('Mobie');">
+				</div>
 		</div>
 
 	</div>
@@ -151,9 +167,14 @@
 			<h1>Person Finder</h1>
 		</div>
 
-		<div data-role="content">
-			Portal Feeds
-		</div>
+			<div data-role="content">
+				<div id="PortalFeedContent">
+				</div>
+				<div id="portalFeedEntry">
+					<input type="text" maxlength="120" id="PortalFeedEntryBox" placeholder="scribble it in...">
+					<input type="button" id="PortalFeedEntryButton" value="Enter" onclick="submitFeed('Portal');">
+				</div>
+			</div>
 	</div>
 
         <script type="text/javascript" src="cordova.js"></script>
