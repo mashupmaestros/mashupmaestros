@@ -3,6 +3,8 @@ package com.codesandgears.enterkonnect.endpoints;
 
 import static com.codesandgears.enterkonnect.service.OfyService.ofy;
 
+import java.util.ArrayList;
+import java.util.List;
 import java.util.logging.Logger;
 
 import javax.inject.Named;
@@ -41,25 +43,31 @@ public class FeedEndpoint {
 
  
         @ApiMethod(name = "getFeed")
-        public  Feed getFeed(@Named("id") Long id) {
+        public  List<Feed> getFeed(@Named("feedDomain") String feedDomain) {
 
-            log.entering(FeedEndpoint.class.getName(),"getFeed",id);
-            log.info(FeedEndpoint.class.getName()+"getFeed"+id);
+            log.entering(FeedEndpoint.class.getName(),"getFeed",feedDomain);
+            log.info(FeedEndpoint.class.getName()+"getFeed"+feedDomain);
             try{
-                Feed feed=ofy().load().type(Feed.class).id(id).now();
-                log.info(feed.toString());
+            List<Feed> feedList=new ArrayList<Feed>();          
+            if(feedDomain.equalsIgnoreCase("Generic")){
+            feedList=ofy().load().type(Feed.class).list();
+            }
+            else{
+            feedList=ofy().load().type(Feed.class).filter("feedDomain >=", feedDomain).filter("feedDomain <=", feedDomain+"\uFFFD").list();
+            }
+           
+                log.info(feedList.toString());
                 log.exiting(FeedEndpoint.class.getName(),"getFeed");
-                return feed;
+                return feedList;
             }catch (Exception e){
 
-                log.severe(FeedEndpoint.class.getName()+"getFeed"+id);
+                log.severe(FeedEndpoint.class.getName()+"getFeed"+feedDomain);
                 e.printStackTrace();
                 return null;
             }
     }
     
 }
-
 
 
 
