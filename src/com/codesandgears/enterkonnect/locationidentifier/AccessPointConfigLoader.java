@@ -1,6 +1,3 @@
-/**
- * 
- */
 package com.codesandgears.enterkonnect.locationidentifier;
 
 import java.io.FileNotFoundException;
@@ -9,6 +6,7 @@ import java.io.InputStream;
 import java.util.Properties;
 
 /**
+ * 
  * @author anand
  *
  */
@@ -29,7 +27,7 @@ public class AccessPointConfigLoader {
 		}
 	}
 
-	public static Properties getAccessPointProperty() {
+	public Properties getAccessPointProperty() {
 		if(configLoader == null)
 			getConfigLoaderInstance();
 		return accessPointProperty;
@@ -45,7 +43,7 @@ public class AccessPointConfigLoader {
 		return configLoader;
 	}
 	
-	public static double getConfiguration(String keyWord){
+	public double getConfiguration(String keyWord){
 		return Double.parseDouble(configLoader.getAccessPointProperty().getProperty(keyWord));
 	}
 

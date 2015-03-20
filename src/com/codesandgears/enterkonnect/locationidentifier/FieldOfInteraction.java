@@ -9,54 +9,28 @@ package com.codesandgears.enterkonnect.locationidentifier;
  */
 public class FieldOfInteraction {
 	
-	private Point origin;
+	private double signalStrength;
+	private AccessPoint ap;
 	
-	private double radius;
-	
-	private double strengthDegradationScale;
-	
-	private double areaOfInteraction;
-
-	public FieldOfInteraction() {
-		origin = new Point(0,0);
-		setStrengthDegradationScale(0);
+	public FieldOfInteraction(String bssid, double signalStrength ){
+		setSignalStrength(signalStrength);
+		ap = new AccessPoint(bssid);
 	}
 	
-	public FieldOfInteraction(double xCoord, double yCoord, double degradeScale){
-		setStrengthDegradationScale(degradeScale);
-	}
-	
-	
-	public Point getOrigin() {
-		return origin;
+
+	public double getRadius() { 
+		return Math.abs((ap.getMaxSignalStrength() - signalStrength)  * ap.getStrengthDegradationScale());
 	}
 
-	public void setOrigin(Point origin) {
-		this.origin = origin;
+	public double getSignalStrength() {
+		return signalStrength;
 	}
 
-	public double getRadius() {
-		return radius;
+	public void setSignalStrength(double signalStrength) {
+		this.signalStrength = signalStrength;
 	}
 
-	public void setRadius(double radius) {
-		this.radius = radius;
+	public Point getDisposition(){
+		return ap.getDisposition();
 	}
-
-	public double getStrengthDegradationScale() {
-		return strengthDegradationScale;
-	}
-
-	public void setStrengthDegradationScale(double strengthDegradationScale) {
-		this.strengthDegradationScale = strengthDegradationScale;
-	}
-
-	public double getAreaOfInteraction() {
-		return areaOfInteraction;
-	}
-
-	public void setAreaOfInteraction(double areaOfInteraction) {
-		this.areaOfInteraction = areaOfInteraction;
-	}
-
 }

@@ -27,5 +27,12 @@ public class Point {
 		setxCoordinate(xCoordinate + xIncrease);
 		setyCoordinate(yCoordinate + yIncrease);
 	}
+
+	@Override
+	public String toString() {
+		return "Point [xCoordinate=" + xCoordinate + ", yCoordinate="
+				+ yCoordinate + "]";
+	}
+	
 	
 }
